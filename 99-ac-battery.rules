@@ -1,0 +1,4 @@
+## Battery
+SUBSYSTEM=="power_supply", ACTION=="change", ENV{POWER_SUPPLY_ONLINE}=="0", ENV{POWER}="off", RUN+="/usr/bin/cpupower frequency-set --governor conservative"
+## AC
+SUBSYSTEM=="power_supply", ACTION=="change", ENV{POWER_SUPPLY_ONLINE}=="1", ENV{POWER}="on", RUN+="/usr/bin/cpupower frequency-set --governor performance"
